@@ -1,4 +1,3 @@
-# smart-parking-system
 # 🚗 Smart Parking System
 
 A web-based Smart Parking System that allows vehicle owners to search, book, and pay for parking slots, while parking owners can manage their slots and bookings. Built using core web technologies like HTML, CSS, JavaScript, PHP, and MySQL.
