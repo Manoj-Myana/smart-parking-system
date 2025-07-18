@@ -94,7 +94,16 @@ smart-parking-system/
 
 ## 📷 Screenshots
 
-<img width="1920" height="1200" alt="Screenshot 2025-05-01 215009" src="https://github.com/user-attachments/assets/4cf8f747-d7d8-4c4d-acb4-3527aa3aa9f1" />
+<img width="1920" height="1200" alt="Screenshot 2025-05-01 214311" src="https://github.com/user-attachments/assets/acafa4aa-2ca8-461e-8d14-6530cd047e86" />
+<img width="1920" height="1200" alt="Screenshot 2025-05-01 214332" src="https://github.com/user-attachments/assets/3e47b3a6-b529-42f3-abb6-98ead9133c55" />
+<img width="1920" height="1200" alt="Screenshot 2025-05-01 214350" src="https://github.com/user-attachments/assets/613f0bcf-ebb1-4bcb-9efb-092de82d95f4" />
+<img width="1920" height="1200" alt="Screenshot 2025-05-01 214616" src="https://github.com/user-attachments/assets/cf90d995-3759-42ad-886d-7c6e8ff6765f" />
+<img width="1920" height="1200" alt="Screenshot 2025-05-01 214631" src="https://github.com/user-attachments/assets/82cb885d-6eea-458d-9221-20701128dafc" />
+<img width="1920" height="1200" alt="Screenshot 2025-05-01 214654" src="https://github.com/user-attachments/assets/617318c5-d18f-490a-99e0-c6cebc71bae4" />
+<img width="1920" height="1200" alt="Screenshot 2025-05-01 214851" src="https://github.com/user-attachments/assets/577b356e-1542-4ab8-8adb-3e3556e97444" />
+<img width="1920" height="1200" alt="Screenshot 2025-05-01 214932" src="https://github.com/user-attachments/assets/19fa7380-54f7-4b63-9394-33d169c72f95" />
+<img width="1920" height="1200" alt="Screenshot 2025-05-01 215009" src="https://github.com/user-attachments/assets/01769c87-bd33-486d-8730-4362b64f2990" />
+
 
 
 ---
