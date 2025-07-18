@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Parking - Register</title>
+    <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+
+    <div class="container">
+        <h2>Register</h2>
+        <select id="userType" onchange="toggleForm()">
+            <option value="">Select User Type</option>
+            <option value="vehicle_owner">Vehicle Owner</option>
+            <option value="parking_owner">Parking Owner</option>
+        </select>
+
+        <!-- Vehicle Owner Form -->
+        <div id="vehicleOwnerForm" style="display:none;">
+            <input type="text" id="vName" placeholder="Full Name">
+            <input type="text" id="vVehicleType" placeholder="Vehicle Type (Car/Bike)">
+            <input type="text" id="vVehicleNumber" placeholder="Vehicle Number">
+            <input type="text" id="vLicenseNumber" placeholder="License Number">
+            <input type="email" id="vEmail" placeholder="Email">
+            <input type="password" id="vPassword" placeholder="Password">
+            <button onclick="registerUser('vehicle_owner')">Register as Vehicle Owner</button>
+        </div>
+
+        <!-- Parking Owner Form -->
+        <div id="parkingOwnerForm" style="display:none;">
+            <input type="text" id="pParkingName" placeholder="Parking Name">
+            <input type="text" id="pArea" placeholder="Area">
+            <input type="text" id="pCity" placeholder="City">
+            <input type="text" id="pPincode" placeholder="Pincode">
+            <input type="text" id="pOwnerName" placeholder="Owner Name">
+            <input type="email" id="pEmail" placeholder="Email">
+            <input type="password" id="pPassword" placeholder="Password">
+            <input type="number" id="pTotalCars" placeholder="Total Car Slots">
+            <input type="number" id="pTotalBikes" placeholder="Total Bike Slots">
+            <button onclick="registerUser('parking_owner')">Register as Parking Owner</button>
+        </div>
+    </div>
+
+    <script src="assets/script.js"></script>
+
+</body>
+</html>

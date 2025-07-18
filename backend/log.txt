@@ -1,0 +1,13 @@
+Array
+(
+    [userType] => parking_owner
+    [parkingName] => manojparkingarea
+    [area] => ramnagar
+    [city] => hyderabad
+    [pincode] => 500020
+    [ownerName] => manoj
+    [email] => manoj@gmail.com
+    [password] => 123456
+    [totalCars] => 10
+    [totalBikes] => 5
+)

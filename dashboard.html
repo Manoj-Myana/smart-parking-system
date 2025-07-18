@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="assets/styles.css">
+
+    <style>
+        body {
+            background-color: #f5f5f5;
+            font-family: 'Segoe UI', sans-serif;
+        }
+        
+        .dashboard-box {
+            width: 300px;
+            margin: 80px auto;
+            padding: 30px;
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        
+        .dashboard-box h2 {
+            margin-bottom: 20px;
+        }
+        
+        .dashboard-box p {
+            font-size: 16px;
+            margin: 8px 0;
+        }
+        
+        .btn-scan {
+            display: inline-block;
+            margin-top: 20px;
+            background-color: #007bff;
+            color: white;
+            padding: 10px 18px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        
+        .btn-scan:hover {
+            background-color: #0056b3;
+        }
+        </style>
+        
+</head>
+<body>
+    <div class="dashboard-box">
+        <h2>Parking Owner Dashboard</h2>
+        <p>Total Car Slots: <span id="total-car-slots">0</span></p>
+        <p>Total Bike Slots: <span id="total-bike-slots">0</span></p>
+        <p>Available Car Slots: <span id="available-car-slots">0</span></p>
+        <p>Available Bike Slots: <span id="available-bike-slots">0</span></p>
+        
+        <a href="qr_scan.php" class="btn-scan">🚗 Scan QR Code</a>
+    </div>
+    
+        
+
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+                fetch("backend/get_dashboard_data.php")
+                    .then(response => response.json())
+                    .then(res => {
+                        console.log("🔁 Response:", res);
+                        if (res.success) {
+                            const data = res.data;
+            
+                            document.getElementById("total-car-slots").innerText = data.total_car_slots;
+                            document.getElementById("total-bike-slots").innerText = data.total_bike_slots;
+                            document.getElementById("available-car-slots").innerText = data.available_car_slots;
+                            document.getElementById("available-bike-slots").innerText = data.available_bike_slots;
+                        } else {
+                            alert("❌ " + res.message);
+                        }
+                    })
+                    .catch(err => {
+                        console.error("❌ Error loading dashboard data:", err);
+                    });
+            });
+            </script>
+            
+    
+</body>
+</html>

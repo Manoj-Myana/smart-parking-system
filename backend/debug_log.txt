@@ -1,0 +1,122 @@
+Raw Data: 
+Decoded Data: 
+Raw Data: {"userType":"parking_owner","parkingName":"manoj parking area","area":"ramnagar","city":"hyderabad","pincode":"500020","ownerName":"manoj","email":"manoj@gmail.com","password":"123456","totalCars":"10","totalBikes":"5"}
+Decoded Data: Array
+(
+    [userType] => parking_owner
+    [parkingName] => manoj parking area
+    [area] => ramnagar
+    [city] => hyderabad
+    [pincode] => 500020
+    [ownerName] => manoj
+    [email] => manoj@gmail.com
+    [password] => 123456
+    [totalCars] => 10
+    [totalBikes] => 5
+)
+
+Raw Data: 
+Decoded Data: 
+Raw Data: {"userType":"parking_owner","parkingName":"manoj parking area","area":"ramnagar","city":"hyderabad","pincode":"500020","ownerName":"manoj","email":"manoj@gmail.com","password":"123456","totalCars":"10","totalBikes":"5"}
+Decoded Data: Array
+(
+    [userType] => parking_owner
+    [parkingName] => manoj parking area
+    [area] => ramnagar
+    [city] => hyderabad
+    [pincode] => 500020
+    [ownerName] => manoj
+    [email] => manoj@gmail.com
+    [password] => 123456
+    [totalCars] => 10
+    [totalBikes] => 5
+)
+
+Raw Data: {"userType":"parking_owner","parkingName":"manoj parking area","area":"ramnagar","city":"hyderabad","pincode":"500020","ownerName":"manoj","email":"manoj@gmail.com","password":"123456","totalCars":"10","totalBikes":"5"}
+Decoded Data: Array
+(
+    [userType] => parking_owner
+    [parkingName] => manoj parking area
+    [area] => ramnagar
+    [city] => hyderabad
+    [pincode] => 500020
+    [ownerName] => manoj
+    [email] => manoj@gmail.com
+    [password] => 123456
+    [totalCars] => 10
+    [totalBikes] => 5
+)
+
+Raw Data: 
+Decoded Data: 
+Raw Data: {"userType":"parking_owner","parkingName":"manoj parking area","area":"ramnagar","city":"hyderabad","pincode":"500020","ownerName":"manoj","email":"manoj@gmail.com","password":"123456","totalCars":"10","totalBikes":"5"}
+Decoded Data: Array
+(
+    [userType] => parking_owner
+    [parkingName] => manoj parking area
+    [area] => ramnagar
+    [city] => hyderabad
+    [pincode] => 500020
+    [ownerName] => manoj
+    [email] => manoj@gmail.com
+    [password] => 123456
+    [totalCars] => 10
+    [totalBikes] => 5
+)
+
+Raw Data: {"userType":"parking_owner","parkingName":"manoj parking area","area":"ramnagar","city":"hyderabad","pincode":"500020","ownerName":"manoj","email":"manoj@gmail.com","password":"123456","totalCars":"10","totalBikes":"5"}
+Decoded Data: Array
+(
+    [userType] => parking_owner
+    [parkingName] => manoj parking area
+    [area] => ramnagar
+    [city] => hyderabad
+    [pincode] => 500020
+    [ownerName] => manoj
+    [email] => manoj@gmail.com
+    [password] => 123456
+    [totalCars] => 10
+    [totalBikes] => 5
+)
+
+Raw Data: {"userType":"parking_owner","parkingName":"manoj parking area","area":"ramnagar","city":"hyderabad","pincode":"500020","ownerName":"manoj","email":"manoj@gmail.com","password":"123456","totalCars":"10","totalBikes":"5"}
+Decoded Data: {
+    "userType": "parking_owner",
+    "parkingName": "manoj parking area",
+    "area": "ramnagar",
+    "city": "hyderabad",
+    "pincode": "500020",
+    "ownerName": "manoj",
+    "email": "manoj@gmail.com",
+    "password": "123456",
+    "totalCars": "10",
+    "totalBikes": "5"
+}
+Raw Data: 
+Decoded Data: null
+Raw Data: {"userType":"parking_owner","parkingName":"manoj parking area","area":"ramnagar","city":"hyderabad","pincode":"500020","ownerName":"manoj","email":"manoj@gmail.com","password":"123456","totalCars":10,"totalBikes":5}
+Decoded Data: {
+    "userType": "parking_owner",
+    "parkingName": "manoj parking area",
+    "area": "ramnagar",
+    "city": "hyderabad",
+    "pincode": "500020",
+    "ownerName": "manoj",
+    "email": "manoj@gmail.com",
+    "password": "123456",
+    "totalCars": 10,
+    "totalBikes": 5
+}
+Raw Data: {"userType":"parking_owner","parkingName":"manoj parking area","area":"ramnagar","city":"hyderabad","pincode":"500020","ownerName":"manoj","email":"manoj@gmail.com","password":"123456","totalCars":10,"totalBikes":5}
+Decoded Data: {
+    "userType": "parking_owner",
+    "parkingName": "manoj parking area",
+    "area": "ramnagar",
+    "city": "hyderabad",
+    "pincode": "500020",
+    "ownerName": "manoj",
+    "email": "manoj@gmail.com",
+    "password": "123456",
+    "totalCars": 10,
+    "totalBikes": 5
+}

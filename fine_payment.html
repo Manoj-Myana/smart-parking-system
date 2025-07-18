@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fine Payment</title>
+    <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Fine Payment</h2>
+        <p id="fineAmount"></p>
+        <input type="hidden" id="bookingId">
+        <input type="text" id="cardName" placeholder="Cardholder Name" required>
+        <input type="text" id="cardNumber" placeholder="Card Number" required>
+        <input type="text" id="expiryDate" placeholder="MM/YY" required>
+        <input type="text" id="cvv" placeholder="CVV" required>
+        <button onclick="confirmFinePayment()">Pay Fine</button>
+    </div>
+
+    <script>
+        let params = new URLSearchParams(window.location.search);
+        let fineAmount = params.get("fine");
+        let bookingId = params.get("bookingId");
+        document.getElementById("fineAmount").innerText = "Fine Amount: ₹" + fineAmount;
+        document.getElementById("bookingId").value = bookingId;
+
+        function confirmFinePayment() {
+            fetch("backend/update_fine_payment.php", {
+                method: "POST",
+                body: JSON.stringify({ bookingId: bookingId }),
+                headers: { "Content-Type": "application/json" }
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.status === "success") {
+                    alert("Fine Paid! You may exit now.");
+                    window.location.href = "qr_scan.html";
+                } else {
+                    alert("Payment failed!");
+                }
+            });
+        }
+    </script>
+</body>
+</html>

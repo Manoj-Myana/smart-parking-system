@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search & Book Parking</title>
+    <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Search Parking Slots</h2>
+        <input type="text" id="searchArea" placeholder="Enter Area Name">
+        <button onclick="searchParking()">Search</button>
+
+        <div id="parkingResults"></div>
+
+        <div id="bookingSection" style="display:none;">
+            <h2>Book a Parking Slot</h2>
+            <p id="selectedParkingDetails" style="font-weight: bold; color: #333;"></p> <!-- Show selected parking details -->
+            
+            <input type="hidden" id="selectedParkingId">
+            
+            <label>Entry Time:</label>
+            <input type="datetime-local" id="entryTime" required>
+            
+            <label>Exit Time:</label>
+            <input type="datetime-local" id="exitTime" required>
+            
+            <div id="priceDisplay"></div>
+            
+            <button onclick="proceedToPayment()">Proceed to Payment</button>
+        </div>
+        
+    </div>
+
+    <script src="assets/script.js"></script>
+</body>
+</html>

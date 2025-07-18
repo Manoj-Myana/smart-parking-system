@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Booking QR Details</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f0f2f5;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    h2, h3 {
+      color: #333;
+      margin-top: 30px;
+    }
+
+    #qrImage {
+      margin: 20px 0;
+      border: 4px solid #007BFF;
+      padding: 10px;
+      border-radius: 10px;
+      background-color: white;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      width: 280px;
+      height: auto;
+    }
+
+    .details {
+      background-color: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+      padding: 20px 30px;
+      width: 90%;
+      max-width: 600px;
+      margin: 20px auto;
+    }
+
+    .details p {
+      margin: 10px 0;
+      font-size: 16px;
+      color: #444;
+    }
+
+    .details strong {
+      color: #222;
+    }
+
+    .home-button {
+      margin-top: 20px;
+      padding: 12px 30px;
+      font-size: 16px;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .home-button:hover {
+      background-color: #0056b3;
+    }
+
+    @media (max-width: 500px) {
+      .details {
+        padding: 15px 20px;
+      }
+
+      #qrImage {
+        width: 100%;
+        max-width: 250px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h2>🧾 Your Booking QR Code</h2>
+  <img id="qrImage" src="" alt="QR Code will appear here">
+
+  <h3>📋 Booking Details</h3>
+  <div class="details">
+    <p><strong>Booking ID:</strong> <span id="booking_id"></span></p>
+    <p><strong>Parking Name:</strong> <span id="parking_name"></span></p>
+    <p><strong>Parking Area:</strong> <span id="parking_area"></span></p>
+    <p><strong>Slot Number:</strong> <span id="slot_number"></span></p>
+    <p><strong>Vehicle Number:</strong> <span id="vehicle_number"></span></p>
+    <p><strong>Parking Owner ID:</strong> <span id="parking_owner_id"></span></p>
+    <p><strong>Entry Time:</strong> <span id="entry_time"></span></p>
+    <p><strong>Exit Time:</strong> <span id="exit_time"></span></p>
+  </div>
+
+  <button class="home-button" onclick="goToHome()">🏠 Go to Home</button>
+
+  <script>
+    function fetchQRCodeDetails(bookingId) {
+      fetch(`backend/fetch_qr.php?booking_id=${bookingId}`)
+        .then(response => response.json())
+        .then(data => {
+          if (data.success) {
+            const details = data.data;
+            document.getElementById("qrImage").src = details.qr_code;
+            document.getElementById("booking_id").textContent = details.booking_id;
+            document.getElementById("parking_name").textContent = details.parking_name;
+            document.getElementById("parking_area").textContent = details.area;
+            document.getElementById("slot_number").textContent = details.slot_number;
+            document.getElementById("vehicle_number").textContent = details.vehicle_number;
+            document.getElementById("parking_owner_id").textContent = details.parking_owner_id;
+            document.getElementById("entry_time").textContent = details.entry_time;
+            document.getElementById("exit_time").textContent = details.exit_time;
+          } else {
+            alert(data.message || "❌ Unable to fetch booking details.");
+          }
+        })
+        .catch(error => {
+          console.error("❌ Error fetching QR code:", error);
+          alert("Error loading booking details.");
+        });
+    }
+
+    function goToHome() {
+      window.location.href = "index.html";
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+      const urlParams = new URLSearchParams(window.location.search);
+      const bookingId = urlParams.get("booking_id");
+
+      if (bookingId) {
+        fetchQRCodeDetails(bookingId);
+      } else {
+        alert("❌ Missing booking ID in URL");
+      }
+    });
+  </script>
+
+</body>
+</html>

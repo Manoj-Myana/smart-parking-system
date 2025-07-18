@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+        #payment-form {
+            display: inline-block;
+            text-align: left;
+            padding: 20px;
+            border: 1px solid #ccc;
+            background: #f9f9f9;
+        }
+        label {
+            font-weight: bold;
+            display: block;
+            margin-top: 10px;
+        }
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            margin-top: 15px;
+            padding: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            background: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        button:hover {
+            background: #218838;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>💳 Payment Details</h2>
+    <form id="payment-form">
+        <label>Name on Card:</label>
+        <input type="text" id="card-name" required>
+
+        <label>Expiry Date:</label>
+        <input type="text" id="expiry-date" placeholder="MM/YY" required>
+
+        <label>CVV:</label>
+        <input type="password" id="cvv" required>
+
+        <button type="button" onclick="processPayment()">💰 Pay Now</button>
+    </form>
+
+    <script>
+        function processPayment() {
+            console.log("🔄 Processing Payment...");
+        
+            const urlParams = new URLSearchParams(window.location.search);
+            const bookingId = urlParams.get("booking_id");
+            const parkingOwnerId = urlParams.get("parking_owner_id");
+        
+            if (!bookingId || !parkingOwnerId) {
+                console.error("❌ Missing Booking ID or Parking Owner ID.");
+                alert("❌ Missing Booking ID or Parking Owner ID.");
+                return;
+            }
+        
+            console.log("📌 Sending Allocate Slot Request with:", { bookingId, parkingOwnerId });
+        
+            // Step 1: Allocate Slot
+            fetch("backend/allocate_slot.php", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ booking_id: bookingId, parking_owner_id: parkingOwnerId })
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log("🔍 Allocate Slot Response:", data);
+        
+                if (!data.success) {
+                    console.error("❌ Allocate Slot Failed:", data.message);
+                    alert("❌ " + data.message);
+                    return;
+                }
+        
+                const slotNumber = data.slot_number;
+                console.log("✅ Allocated Slot Number:", slotNumber);
+        
+                console.log("📌 Sending Process Payment Request with:", { booking_id: bookingId, slot_number: slotNumber });
+        
+                // Step 2: Process Payment
+                return fetch("backend/process_payment.php", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ booking_id: bookingId, slot_number: slotNumber })
+                });
+            })
+            .then(response => response.text()) // Convert to text for debugging
+            .then(text => {
+                console.log("🔍 Process Payment Response (raw text):", text);
+                try {
+                    return JSON.parse(text); // Convert to JSON manually
+                } catch (error) {
+                    console.error("❌ JSON Parse Error:", error);
+                    alert("❌ Invalid response from server.");
+                    return null;
+                }
+            })
+            .then(data => {
+                if (!data || !data.success) {
+                    console.error("❌ Payment Processing Failed:", data ? data.message : "Unknown error");
+                    alert("❌ " + (data ? data.message : "Unknown error"));
+                    return;
+                }
+        
+                console.log("✅ Payment Successful! Redirecting to QR Code Page...");
+                window.location.href = `qr_code.html?booking_id=${bookingId}`;
+            })
+            .catch(error => {
+                console.error("❌ Payment Error:", error);
+            });
+        }
+        </script>
+        
+        
+        
+        
+        
+        
+        
+    
+    
+    
+
+</body>
+</html>
