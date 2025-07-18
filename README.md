@@ -27,7 +27,29 @@ This project focuses on lightweight deployment and easier backend integration, w
 ---
 
 ## 📁 Folder Structure
-<pre> smart-parking-system/ ├── assets/ │ ├── script.js # Client-side JavaScript logic │ └── styles.css # UI styles │ ├── backend/ │ ├── login.php # Login processing │ ├── register.php # Registration logic │ ├── create_booking.php # Booking creation logic │ ├── fetch_slots.php # Fetch available slots by area │ ├── generate_qr.php # QR code generation │ └── ... # Other server-side handlers │ ├── index.html # Login page ├── register.html # Registration page ├── search_parking.html # Slot search & booking ├── payment.html # Payment confirmation + QR code ├── dashboard.html # Admin dashboard ├── qr_scan.html # QR scanning logic ├── smart_parking.sql # Database file └── README.md # Project documentation </pre>
+<details> <summary>Click to expand</summary>
+smart-parking-system/
+├── assets/
+│   ├── script.js               # Client-side JavaScript logic
+│   └── styles.css              # UI styles
+│
+├── backend/
+│   ├── login.php               # Login processing
+│   ├── register.php            # Registration logic
+│   ├── create_booking.php      # Booking creation logic
+│   ├── fetch_slots.php         # Fetch available slots by area
+│   ├── generate_qr.php         # QR code generation
+│   └── ...                     # Other server-side handlers
+│
+├── index.html                  # Login page
+├── register.html               # Registration page
+├── search_parking.html         # Slot search & booking
+├── payment.html                # Payment confirmation + QR code
+├── dashboard.html              # Admin dashboard
+├── qr_scan.html                # QR scanning logic
+├── smart_parking.sql           # Database file
+└── README.md                   # Project documentation
+</details>
 
 
 ---
